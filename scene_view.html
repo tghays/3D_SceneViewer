@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Charlotte Greenway Information Model</title>
+
+    <link rel="stylesheet" href="https://js.arcgis.com/4.4/esri/css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <script src="https://js.arcgis.com/4.4/"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+    <style>
+		html, body, #viewDiv {
+		padding: 0;
+		margin: 0;
+		height: 100%;
+		width: 100%;
+		}
+
+		#titleDiv {
+		  background-color: lightgray;
+		  color: black;
+		  padding: 0px;
+		  position: absolute;
+		  z-index: 2;
+		  top: 0;
+		  left: 0;
+		  right: 0;
+		  font-size: 20pt;
+		  font-weight: bolder;
+      font-family: 'CalciteWebCoreIcons'
+		  width: 100%;
+		  height: 40px;
+		  text-align: left;
+      padding-left: 50px;
+		  opacity: 0.75;
+
+		}
+		#controlsContainer{
+		top: 0px;
+		right: 0px;
+		width: 600px;
+		height: 40px;
+		z-index: 10;
+		position: absolute;
+		background-color: transparent;
+		}
+    #counter_div {
+      position:absolute;
+      right:0px;
+      top:0px;
+      width:200px;
+      height:40px;
+      padding-top: 5px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    #overviewDiv {
+    position: absolute;
+    top: 40px;
+    left: 50px;
+    width: 300px;
+    height: 200px;
+    border: 1px solid black;
+    z-index: 2;
+    }
+
+    #extentDiv {
+      background-color: rgba(0, 0, 0, 0.5);
+      position: absolute;
+      z-index: 2;
+    }
+
+    #infoDiv {
+      z-index: 3;
+      color: "black";
+      font-weight: bolder;
+    }
+		.header {
+		color: black;
+		position: absolute;
+		}
+
+		#row1 {
+		position: relative;
+    float:left;
+		width: 400px;
+		height: 40px;
+		}
+
+    #back_button {
+      font-size: 25px;
+    }
+
+    #forward_button {
+      font-size:25px;
+    }
+
+    #map_viewer {
+      vertical-align: middle;
+    }
+
+    </style>
+
+<script src="sceneView.js"></script>
+
+
+</head>
+
+<body>
+  <div id= "viewDiv">
+  </div>
+
+  <div id="controlsContainer">
+    <div id="row1" class = "btn-group">
+      <button id="map_viewer" class = "btn btn-primary" onclick="window.open('http://ess.maps.arcgis.com/apps/webappviewer/index.html?id=50c3402cea314254b0588d5c20238d4f')">Web Application</button>
+      <button id="scene_viewer" class = "btn btn-primary" onclick="window.open('http://ess.maps.arcgis.com/apps/CEWebViewer/viewer.html?3dWebScene=84b0665af83d4ed18c55d09524ce6269')">City Engine Scene</button>
+      <button id="back_button" content="\ue623" class = "esri-icon-reverse"></button> <!-- Backward-->
+      <button id="forward_button" content="\ue626" class = "esri-icon-forward"></button><!-- Forward-->
+    </div>
+    <div id="counter_div">View Point: 0</div>
+  </div>
+
+    <div id="overviewDiv">
+      <div id="extentDiv"></div>
+    </div>
+
+
+  <div id="titleDiv">
+
+  </div>
+
+
+</body>
+</html>
